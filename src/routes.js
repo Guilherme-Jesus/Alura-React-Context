@@ -1,13 +1,10 @@
-import UsuarioContext from "common/context/Usuario";
+import { UsuarioProvider } from "common/context/Usuario";
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
 import Login from "pages/Login";
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const Router = () => {
-  const [nome, setNome] = useState("");
-  const [saldo, setSaldo] = useState(0);
   return (
     <BrowserRouter>
       <Routes>
@@ -15,9 +12,9 @@ const Router = () => {
           exact
           path="/"
           element={
-            <UsuarioContext.Provider value={{ nome, setNome, saldo, setSaldo }}>
+            <UsuarioProvider>
               <Login />
-            </UsuarioContext.Provider>
+            </UsuarioProvider>
           }
         />
         <Route exact path="/feira" element={<Feira />} />
