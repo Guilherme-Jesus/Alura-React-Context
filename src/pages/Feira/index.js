@@ -1,12 +1,13 @@
-import { Container, Header, Lista } from "./styles";
-import feira from "./feira.json";
+import {UsuarioContext} from "common/context/Usuario";
 import Produto from "components/Produto";
+import {useContext} from "react";
+
+import feira from "./feira.json";
 import NavBar from "./NavBar";
-import { useContext } from "react";
-import { UsuarioContext } from "common/context/Usuario";
+import {Container, Header, Lista} from "./styles";
 
 function Feira() {
-  const { nome, saldo } = useContext(UsuarioContext);
+  const {nome, saldo} = useContext(UsuarioContext);
 
   return (
     <Container>
@@ -21,7 +22,8 @@ function Feira() {
       <Lista>
         <h2>Produtos:</h2>
         {feira.map((produto) => (
-          <Produto {...produto} key={produto.id} />
+          <Produto {...produto} key={
+      produto.id} />
         ))}
       </Lista>
     </Container>
