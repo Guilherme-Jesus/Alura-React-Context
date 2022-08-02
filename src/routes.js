@@ -1,3 +1,4 @@
+import UsuarioContext from "common/context/Usuario";
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
 import Login from "pages/Login";
@@ -14,12 +15,9 @@ const Router = () => {
           exact
           path="/"
           element={
-            <Login
-              nome={nome}
-              setNome={setNome}
-              saldo={saldo}
-              setSaldo={setSaldo}
-            />
+            <UsuarioContext.Provider value={{ nome, setNome, saldo, setSaldo }}>
+              <Login />
+            </UsuarioContext.Provider>
           }
         />
         <Route exact path="/feira" element={<Feira />} />
