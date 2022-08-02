@@ -2,25 +2,25 @@
   {
     "nome": "Tomate",
     "foto": "tomate",
-    "valor": 4.80,
+    "valor": 4.8,
     "id": "1"
   },
   {
     "nome": "Brócolis",
     "foto": "brocolis",
-    "valor": 2.50,
+    "valor": 2.5,
     "id": "2"
   },
   {
     "nome": "Batata",
     "foto": "batata",
-    "valor": 3.60,
+    "valor": 3.6,
     "id": "3"
   },
   {
     "nome": "Pepino",
     "foto": "pepino",
-    "valor": 1.80,
+    "valor": 1.8,
     "id": "4"
   },
   {
