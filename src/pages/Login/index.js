@@ -1,10 +1,10 @@
-import { Button } from "@material-ui/core";
-import { Container, Titulo, InputContainer } from "./styles";
-import { Input, InputLabel, InputAdornment } from "@material-ui/core";
-import { useNavigate } from "react-router-dom";
+import {Button, Input, InputAdornment, InputLabel} from "@material-ui/core";
 import UsuarioContext from "common/context/Usuario";
+import {useNavigate} from "react-router-dom";
 
-function Login({ nome, setNome, saldo, setSaldo }) {
+import {Container, InputContainer, Titulo} from "./styles";
+
+function Login({nome, setNome, saldo, setSaldo}) {
   const navigate = useNavigate();
   return (
     <Container>
@@ -15,13 +15,12 @@ function Login({ nome, setNome, saldo, setSaldo }) {
             <InputContainer>
               <InputLabel>Nome</InputLabel>
               <Input
-                type="text"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-              />
-            </InputContainer>
-            <InputContainer>
-              <InputLabel>Saldo</InputLabel>
+    type = "text"
+    value = {nome} onChange =
+    { (e) => setNome(e.target.value) } />
+            </InputContainer >
+        <InputContainer><InputLabel>Saldo<
+            /InputLabel>
               <Input
                 type="number"
                 value={saldo}
@@ -32,19 +31,20 @@ function Login({ nome, setNome, saldo, setSaldo }) {
               />
             </InputContainer>
             <Button
-              variant="contained"
-              color="primary"
+  variant = "contained"
+  color = "primary"
               onClick={() => {
-                navigate("/feira");
+    navigate("/feira");
               }}
             >
               Avançar
             </Button>
           </>
-        )}
+        )
+}
       </UsuarioContext.Consumer>
     </Container>
   );
-}
+      }
 
-export default Login;
+      export default Login;

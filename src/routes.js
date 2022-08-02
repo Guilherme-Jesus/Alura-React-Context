@@ -2,8 +2,8 @@ import UsuarioContext from "common/context/Usuario";
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
 import Login from "pages/Login";
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {useState} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const Router = () => {
   const [nome, setNome] = useState("");
