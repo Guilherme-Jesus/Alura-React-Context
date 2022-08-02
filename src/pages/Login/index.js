@@ -9,7 +9,7 @@ function Login({ nome, setNome, saldo, setSaldo }) {
   return (
     <Container>
       <UsuarioContext.Consumer>
-        {({nome,setNome,saldo,setSaldo}) => (
+        {({ nome, setNome, saldo, setSaldo }) => (
           <>
             <Titulo>Insira o seu nome</Titulo>
             <InputContainer>
