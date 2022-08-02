@@ -7,19 +7,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <UsuarioProvider>
-              <Login />
-            </UsuarioProvider>
-          }
-        />
-        <Route exact path="/feira" element={<Feira />} />
-        <Route exact path="/carrinho" element={<Carrinho />} />
-      </Routes>
+      <UsuarioProvider>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/feira" element={<Feira />} />
+          <Route exact path="/carrinho" element={<Carrinho />} />
+        </Routes>
+      </UsuarioProvider>
     </BrowserRouter>
   );
 };
