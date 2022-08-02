@@ -1,9 +1,9 @@
-import {createContext, useState} from "react";
+import { createContext, useState } from "react";
 
 export const UsuarioContext = createContext();
 UsuarioContext.displayName = "Usuário";
 
-export const UsuarioProvider = ({children}) => {
+export const UsuarioProvider = ({ children }) => {
   const [nome, setNome] = useState("");
   const [saldo, setSaldo] = useState(0);
   return (
