@@ -1,12 +1,12 @@
+import Produto from 'components/Produto';
+
+import feira from './feira.json';
+import NavBar from './NavBar';
 import {
   Container,
   Header,
   Lista,
 } from './styles';
-import feira from './feira.json';
-import Produto from 'components/Produto';
-import NavBar from './NavBar';
-
 
 function Feira() {
   return (
@@ -26,7 +26,8 @@ function Feira() {
         {feira.map(produto => (
           <Produto
             {...produto}
-            key={produto.id}
+            key={
+      produto.id}
           />
         ))}
       </Lista>

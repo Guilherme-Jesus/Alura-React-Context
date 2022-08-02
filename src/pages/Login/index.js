@@ -1,14 +1,6 @@
-import { Button } from '@material-ui/core';
-import {
-  Container,
-  Titulo,
-  InputContainer
-} from './styles';
-import {
-  Input,
-  InputLabel,
-  InputAdornment 
-} from '@material-ui/core';
+import {Button, Input, InputAdornment, InputLabel} from '@material-ui/core';
+
+import {Container, InputContainer, Titulo} from './styles';
 
 function Login() {
   return (
@@ -21,16 +13,16 @@ function Login() {
           Nome
         </InputLabel>
         <Input
-          type="text"
-        />
+  type =
+      "text" / >
       </InputContainer>
       <InputContainer>
         <InputLabel>
           Saldo
-        </InputLabel>
-        <Input
-        type="number"
-        startAdornment={
+        </InputLabel><
+      Input
+  type = "number"
+  startAdornment = {
           <InputAdornment position="start">
             R$
           </InputAdornment>

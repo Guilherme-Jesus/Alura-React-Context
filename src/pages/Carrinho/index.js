@@ -1,7 +1,8 @@
-import { Button, Snackbar, InputLabel } from '@material-ui/core';
+import {Button, InputLabel, Snackbar} from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert';
-import { useState } from 'react';
-import { Container, Voltar, TotalContainer, PagamentoContainer} from './styles';
+import {useState} from 'react';
+
+import {Container, PagamentoContainer, TotalContainer, Voltar} from './styles';
 
 function Carrinho() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -38,23 +39,13 @@ function Carrinho() {
          Comprar
        </Button>
         <Snackbar
-          anchorOrigin={
-            { 
-              vertical: 'top',
-              horizontal: 'right'
-            }
-          }
-          open={openSnackbar}
-          onClose={() => setOpenSnackbar(false)}
-        >
-           <MuiAlert
-            onClose={() => setOpenSnackbar(false)}
-            severity="success"
-          >
-            Compra feita com sucesso!
-          </MuiAlert>
-        </Snackbar>
-    </Container>
+  anchorOrigin = {
+    { vertical: 'top', horizontal: 'right' }
+  } open = {openSnackbar} onClose = {() => setOpenSnackbar(false)} > < MuiAlert
+  onClose = {() => setOpenSnackbar(false)} severity =
+      "success" > Compra feita com sucesso!</MuiAlert>
+        </Snackbar><
+      /Container>
   )
 }
 

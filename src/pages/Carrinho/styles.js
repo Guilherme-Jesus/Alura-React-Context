@@ -1,6 +1,7 @@
-import { FormControl, IconButton } from '@material-ui/core';
-import styled from 'styled-components';
+import {FormControl, IconButton} from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import styled from 'styled-components';
+
 const titleGray = '#464646';
 
 export const Container = styled.main`
@@ -22,8 +23,8 @@ export const Container = styled.main`
 `;
 
 export const Voltar = styled(IconButton).attrs({
-  children: <ArrowBackIcon />
-})`
+  children : <ArrowBackIcon />
+}) `
   left: 20px;
   position: absolute;
   top: 15px;
@@ -46,6 +47,6 @@ export const TotalContainer = styled.section`
   }
 `
 
-export const PagamentoContainer = styled(FormControl)`
+export const PagamentoContainer = styled(FormControl) `
   width: 100%;
 `
