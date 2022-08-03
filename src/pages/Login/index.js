@@ -17,6 +17,7 @@ function Login() {
           type="text"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
+          required
         />
       </InputContainer>
       <InputContainer>
@@ -26,11 +27,13 @@ function Login() {
           value={saldo}
           onChange={(e) => setSaldo(e.target.value)}
           startAdornment={<InputAdornment position="start">R$</InputAdornment>}
+          required
         />
       </InputContainer>
       <Button
         variant="contained"
         color="primary"
+        disabled={nome.length <= 3}
         onClick={() => {
           navigate("/feira");
         }}
