@@ -8,6 +8,7 @@ import { Container } from "./styles";
 
 function Produto({ nome, foto, id, valor, unidade }) {
   const { carrinho, adicionarProduto, removerProduto } = useCarrinhoContext();
+
   const produtoNoCarrinho = carrinho.find(
     (itemDoCarrinho) => itemDoCarrinho.id === id
   );
@@ -20,7 +21,11 @@ function Produto({ nome, foto, id, valor, unidade }) {
         </p>
       </div>
       <div>
-        <IconButton color="secondary" onClick={() => removerProduto(id)}>
+        <IconButton
+          color="secondary"
+          onClick={() => removerProduto(id)}
+          disabled={!produtoNoCarrinho}
+        >
           <RemoveIcon />
         </IconButton>
         {produtoNoCarrinho?.quantidade || 0}
