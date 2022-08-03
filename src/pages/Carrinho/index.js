@@ -6,14 +6,13 @@ import {
   Snackbar,
 } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
-import { useCarrinhoContext } from "common/context/Carrinho";
-import { usePagamentoContext } from "common/context/Pagamento";
-import { UsuarioContext } from "common/context/Usuario";
+import {useCarrinhoContext} from "common/context/Carrinho";
+import {usePagamentoContext} from "common/context/Pagamento";
+import {UsuarioContext} from "common/context/Usuario";
 import Produto from "components/Produto";
-import { useContext } from "react";
-import { useMemo } from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useContext, useMemo, useState} from "react";
+import {useNavigate} from "react-router-dom";
+
 import {
   Container,
   PagamentoContainer,
@@ -26,26 +25,26 @@ function Carrinho() {
 
   const navigate = useNavigate();
 
-  const { carrinho, valorTotalCarrinho, efetuarCompra } = useCarrinhoContext();
-  const { saldo = 0 } = useContext(UsuarioContext);
-  const { tiposDePagamento, formaDePagamento, mudarFormaPagamento } =
-    usePagamentoContext();
+  const {carrinho, valorTotalCarrinho, efetuarCompra} = useCarrinhoContext();
+  const {saldo = 0} = useContext(UsuarioContext);
+  const {tiposDePagamento, formaDePagamento, mudarFormaPagamento} =
+      usePagamentoContext();
 
-  const total = useMemo(
-    () => saldo - valorTotalCarrinho,
-    [saldo, valorTotalCarrinho]
-  );
+  const total =
+      useMemo(() => saldo - valorTotalCarrinho, [ saldo, valorTotalCarrinho ]);
 
   return (
     <Container>
       <Voltar
-        onClick={() => {
-          navigate("/feira");
-        }}
-      />
-      <h2>Carrinho</h2>
-      {carrinho.map((produto) => (
-        <Produto {...produto} key={produto.id} />
+  onClick =
+  { () => { navigate("/feira"); } } />
+      <h2>Carrinho</h2 >
+      {carrinho.map(
+          (produto) => (
+              <Produto{...produto} key =
+               {
+                 produto.id
+               } />
       ))}
       <PagamentoContainer>
         <Select
@@ -55,23 +54,21 @@ function Carrinho() {
           {tiposDePagamento.map((pagamento) => (
             <MenuItem value={pagamento.id} key={pagamento.id}>
               {pagamento.nome}
-            </MenuItem>
-          ))}
-        </Select>
+            </MenuItem>))}<
+          /Select>
         <InputLabel> Forma de Pagamento </InputLabel>
       </PagamentoContainer>
       <TotalContainer>
         <div>
           <h2>Total no Carrinho: </h2>
-          <span>R$ {Number(valorTotalCarrinho)}</span>
-        </div>
-        <div>
-          <h2> Saldo: </h2>
+      <span>R${Number(valorTotalCarrinho)}</span>
+        </div><div>
+      <h2>Saldo: </h2>
           <span> R$ {Number(saldo).toFixed(2)}</span>
-        </div>
+      </div>
         <div>
           <h2> Saldo Total: </h2>
-          <span> R$ {Number(total).toFixed(2)} </span>
+      <span>R${Number(total).toFixed(2)}</span>
         </div>
       </TotalContainer>
       <Button
@@ -84,20 +81,17 @@ function Carrinho() {
         variant="contained"
       >
         Comprar
-      </Button>
-      <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        open={openSnackbar}
-        onClose={() => setOpenSnackbar(false)}
-      >
-        <MuiAlert onClose={() => setOpenSnackbar(false)} severity="success">
-          Compra feita com sucesso!
-        </MuiAlert>
-      </Snackbar>
-    </Container>
+      </Button><
+      Snackbar
+  anchorOrigin =
+  {
+    { vertical: "top", horizontal: "right", }
+  } open = {openSnackbar} onClose =
+      {() => setOpenSnackbar(false)} >
+      <MuiAlert onClose = {() => setOpenSnackbar(false)} severity = "success">
+          Compra feita com sucesso!</MuiAlert>
+      </Snackbar><
+      /Container>
   );
 }
 
