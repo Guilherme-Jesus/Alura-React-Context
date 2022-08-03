@@ -10,10 +10,9 @@ import { useCarrinhoContext } from "common/context/Carrinho";
 import { usePagamentoContext } from "common/context/Pagamento";
 import { UsuarioContext } from "common/context/Usuario";
 import Produto from "components/Produto";
-import { useContext } from "react";
-import { useMemo } from "react";
-import { useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   Container,
   PagamentoContainer,
@@ -63,15 +62,15 @@ function Carrinho() {
       <TotalContainer>
         <div>
           <h2>Total no Carrinho: </h2>
-          <span>R$ {Number(valorTotalCarrinho)}</span>
+          <span>R${Number(valorTotalCarrinho)}</span>
         </div>
         <div>
-          <h2> Saldo: </h2>
+          <h2>Saldo: </h2>
           <span> R$ {Number(saldo).toFixed(2)}</span>
         </div>
         <div>
           <h2> Saldo Total: </h2>
-          <span> R$ {Number(total).toFixed(2)} </span>
+          <span>R${Number(total).toFixed(2)}</span>
         </div>
       </TotalContainer>
       <Button
@@ -86,10 +85,7 @@ function Carrinho() {
         Comprar
       </Button>
       <Snackbar
-        anchorOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
         open={openSnackbar}
         onClose={() => setOpenSnackbar(false)}
       >

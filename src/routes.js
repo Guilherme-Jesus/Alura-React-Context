@@ -14,7 +14,12 @@ const Router = () => {
           <PagamentoProvider>
             <Routes>
               <Route exact path="/" element={<Login />} />
-              <Route exact path="/feira" element={<Feira />} />
+              <Route
+                exact
+                path="/feira
+                          "
+                element={<Feira />}
+              />
               <Route exact path="/carrinho" element={<Carrinho />} />
             </Routes>
           </PagamentoProvider>
