@@ -1,9 +1,10 @@
-import { Container } from "./styles";
-import { memo } from "react";
 import { IconButton } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import { useCarrinhoContext } from "common/context/Carrinho";
+import { memo } from "react";
+
+import { Container } from "./styles";
 
 function Produto({ nome, foto, id, valor, unidade }) {
   const { carrinho, adicionarProduto, removerProduto } = useCarrinhoContext();
