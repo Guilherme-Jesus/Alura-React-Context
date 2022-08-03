@@ -12,13 +12,12 @@ export default function NavBar() {
   const navigate = useNavigate();
   return (
     <Nav>
-        <Voltar
+      <Voltar
         onClick={() => {
           navigate("/");
         }}
       />
-      <Logo
-      />
+      <Logo />
       <IconButton
         disabled={!quantidadeProdutos}
         onClick={() => {
