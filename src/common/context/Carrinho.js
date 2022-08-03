@@ -1,12 +1,12 @@
-import {createContext, useContext, useEffect, useState} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-import {usePagamentoContext} from "./Pagamento";
-import {UsuarioContext} from "./Usuario";
+import { usePagamentoContext } from "./Pagamento";
+import { UsuarioContext } from "./Usuario";
 
 export const CarrinhoContext = createContext();
 CarrinhoContext.displayName = "Carrinho";
 
-export const CarrinhoProvider = ({children}) => {
+export const CarrinhoProvider = ({ children }) => {
   const [carrinho, setCarrinho] = useState([]);
   const [quantidadeProdutos, setQuantidadeProdutos] = useState(0);
   const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0);
