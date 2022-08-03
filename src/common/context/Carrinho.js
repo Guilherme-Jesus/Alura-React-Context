@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import {createContext, useContext, useState} from "react";
 
 export const CarrinhoContext = createContext();
 CarrinhoContext.displayName = "Carrinho";
 
-export const CarrinhoProvider = ({ children }) => {
+export const CarrinhoProvider = ({children}) => {
   const [carrinho, setCarrinho] = useState([]);
   return (
     <CarrinhoContext.Provider value={{ carrinho, setCarrinho }}>
