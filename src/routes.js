@@ -1,3 +1,4 @@
+import { CarrinhoProvider } from "common/context/Carrinho";
 import { UsuarioProvider } from "common/context/Usuario";
 import Carrinho from "pages/Carrinho";
 import Feira from "pages/Feira";
@@ -8,16 +9,13 @@ const Router = () => {
   return (
     <BrowserRouter>
       <UsuarioProvider>
-        <Routes>
-          <Route exact path="/" element={<Login />} />
-          <Route
-            exact
-            path="/feira
-                          "
-            element={<Feira />}
-          />
-          <Route exact path="/carrinho" element={<Carrinho />} />
-        </Routes>
+        <CarrinhoProvider>
+          <Routes>
+            <Route exact path="/" element={<Login />} />
+            <Route exact path="/feira" element={<Feira />} />
+            <Route exact path="/carrinho" element={<Carrinho />} />
+          </Routes>
+        </CarrinhoProvider>
       </UsuarioProvider>
     </BrowserRouter>
   );
