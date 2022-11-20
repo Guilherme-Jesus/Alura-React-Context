@@ -1,13 +1,13 @@
-import { UsuarioContext } from "common/context/Usuario";
-import Produto from "components/Produto";
-import { useContext } from "react";
+import { UsuarioContext } from 'common/context/Usuario'
+import Produto from 'components/Produto'
+import { useContext } from 'react'
 
-import feira from "./feira.json";
-import NavBar from "./NavBar";
-import { Container, Header, Lista } from "./styles";
+import feira from './feira.json'
+import NavBar from './NavBar'
+import { Container, Header, Lista } from './styles'
 
-function Feira() {
-  const { nome, saldo } = useContext(UsuarioContext);
+function Feira () {
+  const { nome, saldo } = useContext(UsuarioContext)
 
   return (
     <Container>
@@ -26,7 +26,7 @@ function Feira() {
         ))}
       </Lista>
     </Container>
-  );
+  )
 }
 
-export default Feira;
+export default Feira
